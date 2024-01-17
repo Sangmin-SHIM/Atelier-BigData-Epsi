@@ -1,0 +1,24 @@
+{
+  "name": "atelier-bigdata-epsi",
+  "type": "commonjs",
+  "version": "1.0.0",
+  "description": "Repo git de l'atlier Big Data de l'epsi en I1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jul-fls/Atelier-BigData-Epsi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jul-fls/Atelier-BigData-Epsi/issues"
+  },
+  "homepage": "https://github.com/jul-fls/Atelier-BigData-Epsi#readme",
+  "dependencies": {
+    "gtfs": "^4.5.1",
+    "gtfs-realtime": "^0.2.0"
+  }
+}

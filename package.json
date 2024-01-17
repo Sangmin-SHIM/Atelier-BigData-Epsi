@@ -1,6 +1,6 @@
 {
   "name": "atelier-bigdata-epsi",
-  "type": "commonjs",
+  "type": "module",
   "version": "1.0.0",
   "description": "Repo git de l'atlier Big Data de l'epsi en I1",
   "main": "index.js",
@@ -20,6 +20,7 @@
   "dependencies": {
     "express": "^4.18.2",
     "gtfs": "^4.5.1",
-    "gtfs-realtime": "^0.2.0"
+    "gtfs-realtime": "^0.2.0",
+    "kafkajs": "^2.2.4"
   }
 }

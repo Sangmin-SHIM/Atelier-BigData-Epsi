@@ -1,23 +1,37 @@
 import { Kafka } from 'kafkajs';
+import { get_latest_tbm_data } from './utility.js'
 
 const kafka = new Kafka({
   clientId: 'my-app',
-  brokers: ['localhost:9092'],
+  brokers: ['localhost:9093'],
 })
 
 const produceMessages = async () => {
   const producer = kafka.producer();
 
-  // I want to get the result of /tbm_latest
-  const tbmRequest = await fetch('http://localhost:3000/tbm_latest');
-  const tbmResponse = await tbmRequest.json();
+  while (true) {
 
+    try{
+        console.log("First TBM")
+        const firstTBMJson = get_latest_tbm_data()
 
-  
+        // Wait 10 seconds
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        console.log("Second TBM")
+        const secondTBMJson = get_latest_tbm_data()
+
+        if (secondTBMJson.header.timestamp - firstTBMJson.header.timestamp > 0) {
+          console.log("compare two json")
+        }
+    } catch (error) {
+        console.error(error)
+    }
+  }
   try {
     await producer.connect();
 
-    tbmResponse.entity.forEach(async (data) => {
+    firstTBMJson.entity.forEach(async (data) => {
       await producer.send({
         topic:'tbm',
         messages: [

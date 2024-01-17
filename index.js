@@ -4,7 +4,7 @@ import fs from 'fs';
 const app = express();
 
 const port = 3000
-const TBM_URL="https://bdx.mecatran.com/utw/ws/gtfsfeed/vehicles/bordeaux?apiKey=opendata-bordeaux-metropole-flux-gtfs-rt"
+export const TBM_URL="https://bdx.mecatran.com/utw/ws/gtfsfeed/vehicles/bordeaux?apiKey=opendata-bordeaux-metropole-flux-gtfs-rt"
 
 get_latest_tbm_data(TBM_URL)
 

@@ -12,17 +12,29 @@ const produceMessages = async () => {
   while (true) {
 
     try{
-        console.log("First TBM")
         const firstTBMJson = get_latest_tbm_data()
 
-        // Wait 10 seconds
+        // Wait 1 second
         await new Promise(resolve => setTimeout(resolve, 1000));
         
-        console.log("Second TBM")
         const secondTBMJson = get_latest_tbm_data()
 
-        if (secondTBMJson.header.timestamp - firstTBMJson.header.timestamp > 0) {
-          console.log("compare two json")
+        const areDifferentJson = secondTBMJson.header.timestamp - firstTBMJson.header.timestamp > 0
+        if (areDifferentJson) { 
+          firstTBMJson.entity.forEach(async (firstTbm) => {
+            secondTBMJson.entity.forEach(async (secondTbm)=> {
+              if (firstTbm.vehicle.vehicle.id === secondTbm.vehicle.vehicle.id) {
+                if (firstTbm.vehicle.currentStatus == 'STOPPED_AT' && secondTbm.vehicle.currentStatus == 'IN_TRANSIT_TO'){
+                  console.log("routeId : ", firstTbm.vehicle.trip.routeId)
+                  console.log("stopId : ", firstTbm.vehicle.stopId)
+                  console.log(firstTbm.vehicle.vehicle.id.includes("bus") ? "(BUS) ":"(TRAM) " + firstTbm.vehicle.vehicle.id + " est parti")
+                  console.log("secondTbm.vehicle.timestamp - firstTbm.vehicle.timestamp = " ,secondTbm.vehicle.timestamp - firstTbm.vehicle.timestamp)
+                  console.log("----------------------------------------------------------------------------")
+                }
+              }
+            })
+          })
+
         }
     } catch (error) {
         console.error(error)

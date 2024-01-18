@@ -51,8 +51,12 @@ export async function process_tbm_data() {
             );
             console.log(
               firstTbm.vehicle.vehicle.id +
+			    " de la ligne " +
+				stopJson.name +
                 " est parti de l'arrêt " +
                 fullLabel +
+				" en direction de " +
+				firstTbm.vehicle.vehicle.label +
                 " au bout de " +
                 (secondTbm.vehicle.timestamp - firstTbm.vehicle.timestamp) +
                 " seconde(s)"

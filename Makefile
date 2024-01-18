@@ -16,16 +16,23 @@ clean-logs:
 
 # Other useful Kafka commands
 create-topic:
-	$(KAFKA_DIR)/bin/kafka-topics.sh --create --topic my-topic --partitions 1 --replication-factor 1 --zookeeper localhost:2181
+	$(KAFKA_DIR)/bin/kafka-topics.sh --create --topic my-topic --partitions 1 --replication-factor 1 
 
 list-topics:
-	$(KAFKA_DIR)/bin/kafka-topics.sh --list --zookeeper localhost:2181
+	$(KAFKA_DIR)/bin/kafka-topics.sh --list 
 
 describe-topic:
-	$(KAFKA_DIR)/bin/kafka-topics.sh --describe --topic my-topic --zookeeper localhost:2181
+	$(KAFKA_DIR)/bin/kafka-topics.sh --describe --topic my-topic 
 
 produce-message:
 	$(KAFKA_DIR)/bin/kafka-console-producer.sh --topic my-topic --broker-list localhost:9092
 
 consume-messages:
 	$(KAFKA_DIR)/bin/kafka-console-consumer.sh --topic my-topic --from-beginning --bootstrap-server localhost:9092
+
+logs:
+	tail -f $(LOG_FILE)
+
+reconfigure:
+	KAFKA_CLUSTER_ID=$$($(KAFKA_DIR)/bin/kafka-storage.sh random-uuid); \
+	$(KAFKA_DIR)/bin/kafka-storage.sh format -t $$KAFKA_CLUSTER_ID -c $(SERVER_PROPERTIES)

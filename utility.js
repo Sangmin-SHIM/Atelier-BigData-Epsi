@@ -16,39 +16,55 @@ export function get_latest_tbm_data() {
     return JSON.parse(rawdata);
 }
 
-export async function test() {
-        const firstTBMJson = get_latest_tbm_data()
+export async function process_tbm_data() {
+  try {
+    const firstTBMJson = await get_latest_tbm_data();
+    // Wait 1 second
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    const secondTBMJson = await get_latest_tbm_data();
+    const areDifferentJson =
+      secondTBMJson.header.timestamp - firstTBMJson.header.timestamp > 0;
 
-        // Wait 1 second
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        const secondTBMJson = get_latest_tbm_data()
+    if (areDifferentJson) {
+      for (const firstTbm of firstTBMJson.entity) {
+        for (const secondTbm of secondTBMJson.entity) {
+          if (
+            firstTbm.vehicle.vehicle.id === secondTbm.vehicle.vehicle.id &&
+            firstTbm.vehicle.currentStatus === "STOPPED_AT" &&
+            secondTbm.vehicle.currentStatus === "IN_TRANSIT_TO"
+          ) {
+            const routeId = firstTbm.vehicle.trip.routeId;
+            const stopId = firstTbm.vehicle.stopId;
+            const directionId = firstTbm.vehicle.trip.directionId;
 
-        const areDifferentJson = secondTBMJson.header.timestamp - firstTBMJson.header.timestamp > 0
-        if (areDifferentJson) { 
-          firstTBMJson.entity.forEach(async (firstTbm) => {
-            secondTBMJson.entity.forEach(async (secondTbm)=> {
-              if (firstTbm.vehicle.vehicle.id === secondTbm.vehicle.vehicle.id) {
-                if (firstTbm.vehicle.currentStatus == 'STOPPED_AT' && secondTbm.vehicle.currentStatus == 'IN_TRANSIT_TO'){
-                  const routeId = firstTbm.vehicle.trip.routeId
-                  const stopId = firstTbm.vehicle.stopId
-                  const directionId = firstTbm.vehicle.trip.directionId
+            const stop = await fetch(
+              `https://ws.infotbm.com/ws/1.0/network/line-informations/${routeId}`
+            );
+            const stopJson = await stop.json();
 
-                  const stop = await fetch(`https://ws.infotbm.com/ws/1.0/network/line-informations/${routeId}`)
-                  const stopJson = await stop.json()
+            const fullLabel = stopJson.routes[directionId].stopPoints.find(
+              stopPoint => stopPoint.externalCode === stopId
+            ).fullLabel;
 
-                  const fullLabel = stopJson.routes[directionId].stopPoints.filter((stopPoint) => {
-                    return stopPoint.externalCode === stopId
-                  })[0].fullLabel
-
-                  console.log(firstTbm.vehicle.vehicle.id.includes("bus") ? "(BUS) ":"(TRAM) ")
-                  console.log(firstTbm.vehicle.vehicle.id + " est parti de l'arrêt " + fullLabel + " au bout de " + (secondTbm.vehicle.timestamp - firstTbm.vehicle.timestamp) + " seconde(s)")
-                  console.log("----------------------------------------------------------------------------")
-                }
-              }
-            })
-          })
-
+            console.log(
+              firstTbm.vehicle.vehicle.id.includes("bus") ? "(BUS) " : "(TRAM) "
+            );
+            console.log(
+              firstTbm.vehicle.vehicle.id +
+                " est parti de l'arrêt " +
+                fullLabel +
+                " au bout de " +
+                (secondTbm.vehicle.timestamp - firstTbm.vehicle.timestamp) +
+                " seconde(s)"
+            );
+            console.log(
+              "----------------------------------------------------------------------------"
+            );
+          }
         }
-   
+      }
+    }
+  } catch (error) {
+    console.error(error);
+  }
 }

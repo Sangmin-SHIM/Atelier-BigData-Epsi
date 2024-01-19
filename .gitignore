@@ -130,5 +130,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-tbm.json
-tbm.json
+*.json

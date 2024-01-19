@@ -1,0 +1,47 @@
+[
+  {
+    "routeId": "16",
+    "stopId": "2417",
+    "stopDuration": 40,
+    "timestamp": "1705667052",
+    "fullLabel": "Place Lopès (Bordeaux)",
+    "vehicleType": "BUS",
+    "stopName": "Lianes 16",
+    "direction": "BOULIAC Centre Commercial",
+    "directionId": 1
+  },
+  {
+    "routeId": "60",
+    "stopId": "5244",
+    "stopDuration": 30,
+    "timestamp": "1705667052",
+    "fullLabel": "Bougnard (Pessac)",
+    "vehicleType": "TRAM",
+    "stopName": "Tram B",
+    "direction": "Claveau",
+    "directionId": 0
+  },
+  {
+    "routeId": "87",
+    "stopId": "3123",
+    "stopDuration": 20,
+    "timestamp": "1705667072",
+    "fullLabel": "Lafitte (Talence)",
+    "vehicleType": "BUS",
+    "stopName": "Locale 87",
+    "direction": "PESSAC Centre",
+    "directionId": 1
+  },
+  {
+    "routeId": "87",
+    "stopId": "3123",
+    "stopDuration": 400000,
+    "timestamp": "1705652901",
+    "fullLabel": "Lafitte (Talence)",
+    "vehicleType": "BUS",
+    "stopName": "Locale 87",
+    "direction": "PESSAC Centre",
+    "directionId": 1
+  }
+
+]

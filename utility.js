@@ -47,24 +47,21 @@ export async function process_tbm_data() {
               stopPoint => stopPoint.externalCode === stopId
             ).fullLabel;
 
-            console.log(
-              firstTbm.vehicle.vehicle.id.includes("bus") ? "(BUS) " : "(TRAM) "
-            );
-            console.log(
-              firstTbm.vehicle.vehicle.id +
-			    " de la ligne " +
-				stopJson.name +
-                " est parti de l'arrêt " +
-                fullLabel +
-				" en direction de " +
-				firstTbm.vehicle.vehicle.label +
-                " au bout de " +
-                (secondTbm.vehicle.timestamp - firstTbm.vehicle.timestamp) +
-                " seconde(s)"
-            );
-            console.log(
-              "----------------------------------------------------------------------------"
-            );
+            if (fullLabel !== undefined) {
+              return {
+                      routeId: routeId, 
+                      stopId: stopId, 
+                      stopDuration: secondTbm.vehicle.timestamp - firstTbm.vehicle.timestamp, 
+                      timestamp: secondTbm.vehicle.timestamp,
+                      fullLabel: fullLabel,
+                      vehicleType: firstTbm.vehicle.vehicle.id.includes("bus") ? "BUS" : "TRAM",
+                      stopName: stopJson.name,
+                      direction: firstTbm.vehicle.vehicle.label,
+                      directionId: firstTbm.vehicle.trip.directionId
+                    }
+            }
+
+            return undefined;
           }
         }
       }

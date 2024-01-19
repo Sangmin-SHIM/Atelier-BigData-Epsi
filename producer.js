@@ -8,11 +8,11 @@ const produceMessages = async () => {
   let arr_messages1 = []
   let arr_messages2 = []
   for (let i = 0; i < 10; i++) {
-    arr_messages1.push({ key: 'speed', value: `Message tbm1 0${i}` })
+    arr_messages1.push({ value: `Message tbm01 0${i}` })
   }
   await send_messages("tbm1", arr_messages1)
   for (let i = 0; i < 10; i++) {
-    arr_messages2.push({ key: 'speed', value: `Message tbm2 0${i}` })
+    arr_messages2.push({ value: `Message tbm02 0${i}` })
   }
   await send_messages("tbm2", arr_messages2)
 };

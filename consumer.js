@@ -13,8 +13,9 @@ const consumeMessages = async () => {
   await consumer.subscribe({ topic: 'tbm2', fromBeginning: true });
 
   await consumer.run({
-    eachMessage: async ({message }) => {
+    eachMessage: async ({ topic, partition, message, heartbeat, pause }) => {
       console.log({
+        topic: topic,
         value: message.value.toString(),
       });
     },

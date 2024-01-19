@@ -11,10 +11,10 @@ export function get_latest_tbm_data() {
             return;
         }
     });
-    if(fs.existsSync('tbm.json')) {
-        let rawdata = fs.readFileSync('tbm.json');
-        return JSON.parse(rawdata);
-    }
+	if(fs.existsSync('tbm.json')) {
+    	let rawdata = fs.readFileSync('tbm.json');
+    	return JSON.parse(rawdata);
+	}
 }
 
 export async function process_tbm_data() {
@@ -23,21 +23,16 @@ export async function process_tbm_data() {
     await sleep(1000);
     const secondTBMJson = await get_latest_tbm_data();
     const areDifferentJson = secondTBMJson.header.timestamp - firstTBMJson.header.timestamp > 0;
-    if (!areDifferentJson) { return undefined }
-    // console.log("------------------------------------MOYEN--------------------------------------");
-    let averages = await get_stop_station_average_duration(firstTBMJson.entity, secondTBMJson.entity) 
-    // console.log("averages : ", averages)
-    // console.log("------------------------------------PANNES--------------------------------------");
-    let failures = await get_actual_vehicle_failures(firstTBMJson.entity, secondTBMJson.entity)
-    // console.log(failures)
-    // console.log("-------------------------------------ROUTES-------------------------------------");
-    let top_5_routes = await get_top_routes(secondTBMJson.entity,5)
-    // console.log(top_5_routes)
-    // console.log("-------------------------------------DELAI--------------------------------------");
-    let vehicles_stop_duration = await get_vehicles_stop_duration(firstTBMJson.entity, secondTBMJson.entity)
-    // console.log(vehicles_stop_duration)
-
-    return {averages: averages, failuers: failures, top_5_routes: top_5_routes, vehicles_stop_duration: vehicles_stop_duration}
+    if (!areDifferentJson) { return }
+	console.log("------------------------------------PANNES--------------------------------------");
+	let failures = await get_actual_vehicle_failures(firstTBMJson.entity, secondTBMJson.entity)
+	console.log(failures)
+	console.log("-------------------------------------ROUTES-------------------------------------");
+	let top_5_routes = await get_top_routes(secondTBMJson.entity,5)
+	console.log(top_5_routes)
+	console.log("-------------------------------------DELAI--------------------------------------");
+	let vehicles_stop_duration = await get_vehicles_stop_duration(firstTBMJson.entity, secondTBMJson.entity)
+	console.log(vehicles_stop_duration)
   } catch (error) {
     console.error(error);
   }
@@ -98,6 +93,10 @@ export async function get_vehicles_stop_duration(vehicles_1, vehicles_2, detect_
 			} else if (vehicle_1.vehicle.vehicle.id === vehicle_2.vehicle.vehicle.id && vehicle_1.vehicle.trip.routeId === vehicle_2.vehicle.trip.routeId && vehicle_1.vehicle.currentStatus === "STOPPED_AT" && vehicle_2.vehicle.currentStatus === "IN_TRANSIT_TO") {
 				vehicles_stop_duration.push({vehicle: vehicle_1, stop_duration: vehicle_2.vehicle.timestamp - vehicle_1.vehicle.timestamp})
 			}
+			//log stop_name for each stop using this method : get_stop_info_by_route_id_and_stop_id
+			let stop_info = await get_stop_info_by_route_id_and_stop_id(vehicle_1.vehicle.trip.routeId, vehicle_1.vehicle.stopId)
+			vehicle_1.vehicle.stop_name = stop_info.fullLabel
+			console.log(vehicle_1.vehicle.stop_name)
 		}
 	}
 	return vehicles_stop_duration

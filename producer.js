@@ -43,7 +43,7 @@ const produceMessages = async () => {
         }
       })
     } else {
-      arr_stop_duration_averages.push({stopId: curr.stopId, stopDurationAcc: curr.stopDuration, count: 1, directionId: curr.directionId})
+      arr_stop_duration_averages.push({routeId: curr.routeId,stopId: curr.stopId, stopDurationAcc: curr.stopDuration, count: 1, directionId: curr.directionId})
     }
   }, 0)
   console.log("arr_stop_duration_averages : ", arr_stop_duration_averages)

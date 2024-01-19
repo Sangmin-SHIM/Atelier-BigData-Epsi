@@ -170,3 +170,23 @@ export async function get_stop_info_by_route_id_and_stop_id(route_id, stop_id){
 export async function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+export async function execute_write_json_station_stop_time(secondes){
+  for (let i=0; i < secondes; i++) {
+      let tbm_data = await process_tbm_data()
+      if (tbm_data !== undefined) {
+          let averages = tbm_data.averages
+          let arr_existing=[]
+          if(fs.existsSync('station_stop_time.json')) {
+            arr_existing=fs.readFileSync('station_stop_time.json');
+            arr_existing = JSON.parse(arr_existing);
+            if (averages) {
+              arr_existing.push(averages)
+            }
+          }
+          let data = JSON.stringify(arr_existing);
+          fs.writeFileSync('station_stop_time.json', data);
+      }
+  }
+}
+

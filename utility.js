@@ -23,7 +23,10 @@ export async function process_tbm_data() {
     await sleep(1000);
     const secondTBMJson = await get_latest_tbm_data();
     const areDifferentJson = secondTBMJson.header.timestamp - firstTBMJson.header.timestamp > 0;
-    if (!areDifferentJson) { return }
+	if (!areDifferentJson) { return undefined }
+	// console.log("------------------------------------MOYEN--------------------------------------");
+    let averages = await get_stop_station_average_duration(firstTBMJson.entity, secondTBMJson.entity) 
+    // console.log("averages : ", averages)
 	console.log("------------------------------------PANNES--------------------------------------");
 	let failures = await get_actual_vehicle_failures(firstTBMJson.entity, secondTBMJson.entity)
 	console.log(failures)
@@ -33,6 +36,7 @@ export async function process_tbm_data() {
 	console.log("-------------------------------------DELAI--------------------------------------");
 	let vehicles_stop_duration = await get_vehicles_stop_duration(firstTBMJson.entity, secondTBMJson.entity)
 	console.log(vehicles_stop_duration)
+	return {averages: averages, failuers: failures, top_5_routes: top_5_routes, vehicles_stop_duration: vehicles_stop_duration}
   } catch (error) {
     console.error(error);
   }
@@ -50,19 +54,9 @@ export async function get_stop_station_average_duration(vehicles_1,vehicles_2){
         const stopId = vehicle_1.vehicle.stopId;
         const directionId = vehicle_1.vehicle.trip.directionId;
 
-        // const stop = await fetch(
-        //       `https://ws.infotbm.com/ws/1.0/network/line-informations/${routeId}`
-        //   );
-        // const stopJson = await stop.json();
-
-        // const fullLabel = stopJson.routes[directionId].stopPoints.find(
-        //       stopPoint => stopPoint.externalCode === stopId
-        //     ).fullLabel;
-
         const stopInfo=await get_stop_info_by_route_id_and_stop_id(routeId, stopId)
         
         if (stopInfo !== undefined) {
-
            let object ={
             routeId: routeId,
             stopId: stopId,
@@ -74,7 +68,6 @@ export async function get_stop_station_average_duration(vehicles_1,vehicles_2){
             direction: vehicle_1.vehicle.vehicle.label,
             directionId: vehicle_1.vehicle.trip.directionId
           }
-
           return object
         }
         return undefined;
@@ -93,10 +86,6 @@ export async function get_vehicles_stop_duration(vehicles_1, vehicles_2, detect_
 			} else if (vehicle_1.vehicle.vehicle.id === vehicle_2.vehicle.vehicle.id && vehicle_1.vehicle.trip.routeId === vehicle_2.vehicle.trip.routeId && vehicle_1.vehicle.currentStatus === "STOPPED_AT" && vehicle_2.vehicle.currentStatus === "IN_TRANSIT_TO") {
 				vehicles_stop_duration.push({vehicle: vehicle_1, stop_duration: vehicle_2.vehicle.timestamp - vehicle_1.vehicle.timestamp})
 			}
-			//log stop_name for each stop using this method : get_stop_info_by_route_id_and_stop_id
-			let stop_info = await get_stop_info_by_route_id_and_stop_id(vehicle_1.vehicle.trip.routeId, vehicle_1.vehicle.stopId)
-			vehicle_1.vehicle.stop_name = stop_info.fullLabel
-			console.log(vehicle_1.vehicle.stop_name)
 		}
 	}
 	return vehicles_stop_duration
@@ -114,13 +103,11 @@ export async function send_messages(topic, messages) {
 
   try {
 	await producer.connect();
-
 	await producer.send({
 		topic: topic,
 		messages: messages,
 	  });
   } finally {
-	// Make sure to disconnect the producer, even if an error occurs
 	await producer.disconnect();
   }
 }
@@ -154,7 +141,6 @@ export async function get_top_routes(vehicles, top_n_routes = 0){
 				count++
 			}
 		}
-		
 		top_routes.push({route: route, count: count})
 	}
 	top_routes.sort((a, b) => (a.count < b.count) ? 1 : -1)

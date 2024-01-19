@@ -11,8 +11,10 @@ export function get_latest_tbm_data() {
             return;
         }
     });
-    let rawdata = fs.readFileSync('tbm.json');
-    return JSON.parse(rawdata);
+    if(fs.existsSync('tbm.json')) {
+        let rawdata = fs.readFileSync('tbm.json');
+        return JSON.parse(rawdata);
+    }
 }
 
 export async function process_tbm_data() {

@@ -1,32 +1,20 @@
-import { Kafka } from 'kafkajs';
-import { process_tbm_data } from './utility.js'
-
-const kafka = new Kafka({
-  clientId: 'my-app',
-  brokers: ['localhost:9093'],
-})
+import { process_tbm_data, send_messages } from './utility.js'
 
 const produceMessages = async () => {
-  const producer = kafka.producer();
-
-  while (true) {
-    await process_tbm_data()
+  //while (true) {
+    //await process_tbm_data()
+    
+  //}
+  let arr_messages1 = []
+  let arr_messages2 = []
+  for (let i = 0; i < 10; i++) {
+    arr_messages1.push({ key: 'speed', value: `Message tbm1 0${i}` })
   }
-  // try {
-  //   await producer.connect();
-
-  //   firstTBMJson.entity.forEach(async (data) => {
-  //     await producer.send({
-  //       topic:'tbm',
-  //       messages: [
-  //         { value: `${data.vehicle.vehicle.label}` },
-  //       ],
-  //     });
-  //   })
-  // } finally {
-  //   // Make sure to disconnect the producer, even if an error occurs
-  //   await producer.disconnect();
-  // }
+  await send_messages("tbm1", arr_messages1)
+  for (let i = 0; i < 10; i++) {
+    arr_messages2.push({ key: 'speed', value: `Message tbm2 0${i}` })
+  }
+  await send_messages("tbm2", arr_messages2)
 };
 
 // Call the async function to produce messages

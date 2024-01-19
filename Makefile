@@ -16,13 +16,13 @@ clean-logs:
 
 # Other useful Kafka commands
 create-topic:
-	$(KAFKA_DIR)/bin/kafka-topics.sh --create --topic my-topic --partitions 1 --replication-factor 1 
+	$(KAFKA_DIR)/bin/kafka-topics.sh --create --topic tbm2 --partitions 1 --replication-factor 1 --bootstrap-server localhost:9092
 
 list-topics:
-	$(KAFKA_DIR)/bin/kafka-topics.sh --list 
+	$(KAFKA_DIR)/bin/kafka-topics.sh --list --bootstrap-server localhost:9092
 
 describe-topic:
-	$(KAFKA_DIR)/bin/kafka-topics.sh --describe --topic my-topic 
+	$(KAFKA_DIR)/bin/kafka-topics.sh --describe --topic my-topic --bootstrap-server localhost:9092
 
 produce-message:
 	$(KAFKA_DIR)/bin/kafka-console-producer.sh --topic my-topic --broker-list localhost:9092

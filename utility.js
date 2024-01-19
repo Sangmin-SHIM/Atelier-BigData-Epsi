@@ -1,4 +1,5 @@
 
+import { Kafka, Partitioners } from 'kafkajs';
 import { exec } from 'node:child_process';
 import fs from 'node:fs';
 
@@ -70,5 +71,28 @@ export async function process_tbm_data() {
     }
   } catch (error) {
     console.error(error);
+  }
+}
+
+export async function send_messages(topic, messages) {
+  const kafka = new Kafka({
+	clientId: "tbm-producer",
+	brokers: ["localhost:9092"],
+  });
+
+  const producer = kafka.producer({
+	createPartitioner: Partitioners.LegacyPartitioner
+  });
+
+  try {
+	await producer.connect();
+
+	await producer.send({
+		topic: topic,
+		messages: messages,
+	  });
+  } finally {
+	// Make sure to disconnect the producer, even if an error occurs
+	await producer.disconnect();
   }
 }

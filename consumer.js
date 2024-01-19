@@ -2,14 +2,15 @@ import { Kafka } from 'kafkajs';
 
 const kafka = new Kafka({
   clientId: 'my-app',
-  brokers: ['localhost:9093'],
+  brokers: ['localhost:9092'],
 })
 
 const consumeMessages = async () => {
   const consumer = kafka.consumer({ groupId: 'test-group' });
 
   await consumer.connect();
-  await consumer.subscribe({ topic: 'tbm', fromBeginning: true });
+  await consumer.subscribe({ topic: 'tbm1', fromBeginning: true });
+  await consumer.subscribe({ topic: 'tbm2', fromBeginning: true });
 
   await consumer.run({
     eachMessage: async ({message }) => {

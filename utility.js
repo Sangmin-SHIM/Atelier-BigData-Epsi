@@ -5,18 +5,24 @@ import { promisify } from 'node:util';
 
 const execAsync = promisify(exec);
 
-export async function get_latest_tbm_data() {
-	const gtfsRealtimeCommand = `gtfs-realtime https://bdx.mecatran.com/utw/ws/gtfsfeed/vehicles/bordeaux?apiKey=opendata-bordeaux-metropole-flux-gtfs-rt --output tbm.json`;
-	try {
-		await execAsync(gtfsRealtimeCommand);
-		if (fs.existsSync('tbm.json')) {
-			let rawdata = fs.readFileSync('tbm.json');
-			return JSON.parse(rawdata);
-		}
-	} catch (error) {
-		console.error(`Error executing command: ${error}`);
-		throw error; // Rethrow the error so it can be handled by the caller
-	}
+export async function get_latest_tbm_data(retryCount = 0, maxRetries = 3) {
+    const gtfsRealtimeCommand = `gtfs-realtime https://bdx.mecatran.com/utw/ws/gtfsfeed/vehicles/bordeaux?apiKey=opendata-bordeaux-metropole-flux-gtfs-rt --output tbm.json`;
+    try {
+        await execAsync(gtfsRealtimeCommand);
+
+        if (fs.existsSync('tbm.json')) {
+            let rawdata = fs.readFileSync('tbm.json');
+            return JSON.parse(rawdata);
+        }
+    } catch (error) {
+        if (error instanceof SyntaxError && retryCount < maxRetries) {
+            console.error(`JSON parsing failed, retrying... (${retryCount + 1}/${maxRetries})`);
+            return get_latest_tbm_data(retryCount + 1, maxRetries);
+        } else {
+            console.error(`Error executing command or maximum retries reached: ${error}`);
+            throw error; // Rethrow the error so it can be handled by the caller
+        }
+    }
 }
 
 export async function get_stop_station_average_duration (vehicles_1, vehicles_2) {

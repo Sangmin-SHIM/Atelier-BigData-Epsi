@@ -18,7 +18,7 @@ clean-logs:
 create-topic:
 	$(KAFKA_DIR)/bin/kafka-topics.sh --create --topic topic_name --partitions 1 --replication-factor 1 --bootstrap-server localhost:9092
 delete-topic:
-	$(KAFKA_DIR)/bin/kafka-topics.sh --delete --topic tbm2 --bootstrap-server localhost:9092
+	$(KAFKA_DIR)/bin/kafka-topics.sh --delete --topic topic_name --bootstrap-server localhost:9092
 
 list-topics:
 	$(KAFKA_DIR)/bin/kafka-topics.sh --list --bootstrap-server localhost:9092

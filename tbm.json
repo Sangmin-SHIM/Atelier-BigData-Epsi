@@ -541,7 +541,7 @@
         "stopId": "7453",
         "vehicle": {
           "id": "ineo-bus:1077",
-          "label": "BOULIAC Centre Commercial"
+          "label": "MERIGNAC Les Pins"
         }
       }
     },
@@ -796,7 +796,7 @@
           "startTime": "14:30:00",
           "scheduleRelationship": "SCHEDULED",
           "routeId": "20",
-          "directionId": 1
+          "directionId": 0
         },
         "position": {
           "latitude": 44.82102966308594,
@@ -891,7 +891,7 @@
         "timestamp": "1705674971",
         "stopId": "9281",
         "vehicle": {
-          "id": "ineo-bus:1140",
+          "id": "ineo-bus:1139",
           "label": "MERIGNAC Cimetière Intercommunnal"
         }
       }
@@ -918,7 +918,7 @@
         "timestamp": "1705674829",
         "stopId": "2105",
         "vehicle": {
-          "id": "ineo-bus:1141",
+          "id": "ineo-bus:1140",
           "label": "BORDEAUX Brulatour"
         }
       }
@@ -1092,8 +1092,8 @@
           "tripId": "39749060-2024_HIVER-M31_A11-Jeu-Ven-55",
           "startTime": "15:32:00",
           "scheduleRelationship": "SCHEDULED",
-          "routeId": "31",
-          "directionId": 0
+          "routeId": "73",
+          "directionId": 1
         },
         "position": {
           "latitude": 44.88960266113281,
@@ -1107,8 +1107,8 @@
         "timestamp": "1705674971",
         "stopId": "261",
         "vehicle": {
-          "id": "ineo-bus:1404",
-          "label": "GRADIGNAN Beausoleil"
+          "id": "ineo-bus:1195",
+          "label": "BEGLES Rives d'Arcins"
         }
       }
     },
@@ -2052,6 +2052,330 @@
         "timestamp": "1705674347",
         "stopId": "5742",
         "vehicle": {
+          "id": "ineo-bus:1518",
+          "label": "BOULIAC Centre Commercial"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:39553993-2024_HIVER-M25_A00-Semaine-07",
+      "vehicle": {
+        "trip": {
+          "tripId": "39553993-2024_HIVER-M25_A00-Semaine-07",
+          "startTime": "14:48:00",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "25",
+          "directionId": 1
+        },
+        "position": {
+          "latitude": 44.82046890258789,
+          "longitude": -0.5316047072410583,
+          "bearing": 338,
+          "odometer": 7138,
+          "speed": 0.5555555820465088
+        },
+        "currentStopSequence": 16,
+        "currentStatus": "STOPPED_AT",
+        "timestamp": "1705673227",
+        "stopId": "8203",
+        "vehicle": {
+          "id": "ineo-bus:1519",
+          "label": "BORDEAUX La Cité du Vin"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:39749021-2024_HIVER-M31_A11-Jeu-Ven-55",
+      "vehicle": {
+        "trip": {
+          "tripId": "39749021-2024_HIVER-M31_A11-Jeu-Ven-55",
+          "startTime": "15:00:00",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "31",
+          "directionId": 0
+        },
+        "position": {
+          "latitude": 45.008522033691406,
+          "longitude": -0.5223533511161804,
+          "bearing": 134,
+          "odometer": 2407,
+          "speed": 3.6111111640930176
+        },
+        "currentStopSequence": 11,
+        "currentStatus": "IN_TRANSIT_TO",
+        "timestamp": "1705673227",
+        "stopId": "1675",
+        "vehicle": {
+          "id": "ineo-bus:1523",
+          "label": "PESSAC Photonique"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:39024192-2024_HIVER-M15_A01-Jeu-Ven-14",
+      "vehicle": {
+        "trip": {
+          "tripId": "39024192-2024_HIVER-M15_A01-Jeu-Ven-14",
+          "startTime": "14:31:00",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "15",
+          "directionId": 0
+        },
+        "position": {
+          "latitude": 44.829872131347656,
+          "longitude": -0.5723309516906738,
+          "bearing": 326,
+          "odometer": 10508,
+          "speed": 0
+        },
+        "currentStopSequence": 31,
+        "currentStatus": "STOPPED_AT",
+        "timestamp": "1705673227",
+        "stopId": "3501",
+        "vehicle": {
+          "id": "ineo-bus:1525",
+          "label": "BORDEAUX Centre Commercial du Lac"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:39241641-2024_HIVER-M27_A00-Semaine-11",
+      "vehicle": {
+        "trip": {
+          "tripId": "39241641-2024_HIVER-M27_A00-Semaine-11",
+          "startTime": "15:05:00",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "32",
+          "directionId": 0
+        },
+        "position": {
+          "latitude": 44.87360382080078,
+          "longitude": -0.545823872089386,
+          "bearing": 196,
+          "odometer": 131,
+          "speed": 2.5
+        },
+        "currentStopSequence": 2,
+        "currentStatus": "IN_TRANSIT_TO",
+        "timestamp": "1705673227",
+        "stopId": "5609",
+        "vehicle": {
+          "id": "ineo-bus:1526",
+          "label": "BOULIAC Centre Commercial"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:39067932-2024_HIVER-M07_A11-Jeu-Ven-24",
+      "vehicle": {
+        "trip": {
+          "tripId": "39067932-2024_HIVER-M07_A11-Jeu-Ven-24",
+          "startTime": "14:57:00",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "07",
+          "directionId": 0
+        },
+        "position": {
+          "latitude": 44.87025451660156,
+          "longitude": -0.5763087272644043,
+          "bearing": 179,
+          "odometer": 2569,
+          "speed": 1.3888888359069824
+        },
+        "currentStopSequence": 8,
+        "currentStatus": "IN_TRANSIT_TO",
+        "timestamp": "1705673227",
+        "stopId": "6832",
+        "vehicle": {
+          "id": "ineo-bus:1527",
+          "label": "AMBARES Parabelle"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:39024285-2024_HIVER-M15_A01-Jeu-Ven-14",
+      "vehicle": {
+        "trip": {
+          "tripId": "39024285-2024_HIVER-M15_A01-Jeu-Ven-14",
+          "startTime": "14:00:00",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "15",
+          "directionId": 1
+        },
+        "position": {
+          "latitude": 44.81400680541992,
+          "longitude": -0.5648772120475769,
+          "bearing": 171,
+          "odometer": 14336,
+          "speed": 0
+        },
+        "currentStopSequence": 44,
+        "currentStatus": "STOPPED_AT",
+        "timestamp": "1705673227",
+        "stopId": "663",
+        "vehicle": {
+          "id": "ineo-bus:1528",
+          "label": "VILLENAVE Courrejean"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:39749116-2024_HIVER-M31_A11-Jeu-Ven-55",
+      "vehicle": {
+        "trip": {
+          "tripId": "39749116-2024_HIVER-M31_A11-Jeu-Ven-55",
+          "startTime": "14:31:00",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "31",
+          "directionId": 1
+        },
+        "position": {
+          "latitude": 44.815101623535156,
+          "longitude": -0.5652506947517395,
+          "bearing": 345,
+          "odometer": 9413,
+          "speed": 6.388888835906982
+        },
+        "currentStopSequence": 26,
+        "currentStatus": "IN_TRANSIT_TO",
+        "timestamp": "1705673227",
+        "stopId": "7",
+        "vehicle": {
+          "id": "ineo-bus:1530",
+          "label": "BASSENS Quai Français"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:39495236-2024_HIVER-M73_A00-Semaine-02",
+      "vehicle": {
+        "trip": {
+          "tripId": "39495236-2024_HIVER-M73_A00-Semaine-02",
+          "startTime": "13:50:00",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "73",
+          "directionId": 1
+        },
+        "position": {
+          "latitude": 44.80291748046875,
+          "longitude": -0.5314255356788635,
+          "bearing": 148,
+          "odometer": 24435,
+          "speed": 13.88888931274414
+        },
+        "currentStopSequence": 69,
+        "currentStatus": "IN_TRANSIT_TO",
+        "timestamp": "1705673227",
+        "stopId": "1452",
+        "vehicle": {
+          "id": "ineo-bus:1598",
+          "label": "BEGLES Rives d'Arcins"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:39495238-2024_HIVER-M73_A00-Semaine-02",
+      "vehicle": {
+        "trip": {
+          "tripId": "39495238-2024_HIVER-M73_A00-Semaine-02",
+          "startTime": "15:05:00",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "73",
+          "directionId": 1
+        },
+        "position": {
+          "latitude": 44.8736572265625,
+          "longitude": -0.6294694542884827,
+          "bearing": 78,
+          "odometer": 0,
+          "speed": 0
+        },
+        "currentStopSequence": 1,
+        "currentStatus": "STOPPED_AT",
+        "timestamp": "1705673227",
+        "stopId": "6976",
+        "vehicle": {
+          "id": "ineo-bus:1599",
+          "label": "BEGLES Rives d'Arcins"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:39024290-2024_HIVER-M15_A01-Jeu-Ven-14",
+      "vehicle": {
+        "trip": {
+          "tripId": "39024290-2024_HIVER-M15_A01-Jeu-Ven-14",
+          "startTime": "15:00:00",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "15",
+          "directionId": 1
+        },
+        "position": {
+          "latitude": 44.87803268432617,
+          "longitude": -0.5811015963554382,
+          "bearing": 317,
+          "odometer": 2156,
+          "speed": 8.05555534362793
+        },
+        "currentStopSequence": 8,
+        "currentStatus": "IN_TRANSIT_TO",
+        "timestamp": "1705673227",
+        "stopId": "5519",
+        "vehicle": {
+          "id": "ineo-bus:1601",
+          "label": "VILLENAVE Courrejean"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:39241597-2024_HIVER-M27_A00-Semaine-11",
+      "vehicle": {
+        "trip": {
+          "tripId": "39241597-2024_HIVER-M27_A00-Semaine-11",
+          "startTime": "14:40:00",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "32",
+          "directionId": 1
+        },
+        "position": {
+          "latitude": 44.86513900756836,
+          "longitude": -0.5249620079994202,
+          "bearing": 209,
+          "odometer": 9034,
+          "speed": 5.833333492279053
+        },
+        "currentStopSequence": 25,
+        "currentStatus": "IN_TRANSIT_TO",
+        "timestamp": "1705673227",
+        "stopId": "3606",
+        "vehicle": {
+          "id": "ineo-bus:1603",
+          "label": "BORDEAUX Brandenburg"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:39241638-2024_HIVER-M27_A00-Semaine-11",
+      "vehicle": {
+        "trip": {
+          "tripId": "39241638-2024_HIVER-M27_A00-Semaine-11",
+          "startTime": "14:05:00",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "32",
+          "directionId": 0
+        },
+        "position": {
+          "latitude": 44.846046447753906,
+          "longitude": -0.5105250477790833,
+          "bearing": 197,
+          "odometer": 17838,
+          "speed": 5.277777671813965
+        },
+        "currentStopSequence": 36,
+        "currentStatus": "STOPPED_AT",
+        "timestamp": "1705673227",
+        "stopId": "1601",
+        "vehicle": {
           "id": "ineo-bus:1606",
           "label": "BORDEAUX Brandenburg"
         }
@@ -2497,7 +2821,7 @@
           "startTime": "15:37:00",
           "scheduleRelationship": "SCHEDULED",
           "routeId": "15",
-          "directionId": 0
+          "directionId": 1
         },
         "position": {
           "latitude": 44.77382278442383,
@@ -2506,12 +2830,39 @@
           "odometer": 0,
           "speed": 0
         },
-        "currentStopSequence": 1,
+        "currentStopSequence": 57,
         "currentStatus": "STOPPED_AT",
         "timestamp": "1705674027",
         "stopId": "2623",
         "vehicle": {
           "id": "ineo-bus:1631",
+          "label": "VILLENAVE Courrejean"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:39067991-2024_HIVER-M07_A11-Jeu-Ven-24",
+      "vehicle": {
+        "trip": {
+          "tripId": "39067991-2024_HIVER-M07_A11-Jeu-Ven-24",
+          "startTime": "14:50:00",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "07",
+          "directionId": 1
+        },
+        "position": {
+          "latitude": 44.927982330322266,
+          "longitude": -0.4975523352622986,
+          "bearing": 201,
+          "odometer": 5212,
+          "speed": 4.722222328186035
+        },
+        "currentStopSequence": 14,
+        "currentStatus": "STOPPED_AT",
+        "timestamp": "1705673227",
+        "stopId": "7567",
+        "vehicle": {
+          "id": "ineo-bus:1632",
           "label": "BORDEAUX Centre Commercial du Lac"
         }
       }
@@ -3253,7 +3604,7 @@
           "startTime": "14:44:00",
           "scheduleRelationship": "SCHEDULED",
           "routeId": "09",
-          "directionId": 0
+          "directionId": 1
         },
         "position": {
           "latitude": 44.875022888183594,
@@ -3321,7 +3672,7 @@
         "timestamp": "1705674951",
         "stopId": "1595",
         "vehicle": {
-          "id": "ineo-bus:1874",
+          "id": "ineo-bus:1871",
           "label": "BORDEAUX Brandenburg"
         }
       }
@@ -3604,7 +3955,7 @@
           "startTime": "15:12:00",
           "scheduleRelationship": "SCHEDULED",
           "routeId": "09",
-          "directionId": 1
+          "directionId": 0
         },
         "position": {
           "latitude": 44.845855712890625,
@@ -3618,8 +3969,8 @@
         "timestamp": "1705674951",
         "stopId": "149",
         "vehicle": {
-          "id": "ineo-bus:1893",
-          "label": "BORDEAUX Gare St Jean"
+          "id": "ineo-bus:1892",
+          "label": "BORDEAUX Brandenburg"
         }
       }
     },
@@ -4591,7 +4942,7 @@
         "stopId": "3063",
         "vehicle": {
           "id": "ineo-bus:2338",
-          "label": "BORDEAUX Quinconces"
+          "label": "ST MEDARD Issac"
         }
       }
     },
@@ -4630,7 +4981,7 @@
           "startTime": "15:20:00",
           "scheduleRelationship": "SCHEDULED",
           "routeId": "04",
-          "directionId": 1
+          "directionId": 0
         },
         "position": {
           "latitude": 44.80290222167969,
@@ -4645,7 +4996,7 @@
         "stopId": "2787",
         "vehicle": {
           "id": "ineo-bus:2340",
-          "label": "BORDEAUX Palais de Justice"
+          "label": "PESSAC Cap de Bos"
         }
       }
     },
@@ -4672,7 +5023,7 @@
         "stopId": "13083",
         "vehicle": {
           "id": "ineo-bus:2343",
-          "label": "BORDEAUX Quinconces"
+          "label": "ST AUBIN Villepreux"
         }
       }
     },
@@ -4725,6 +5076,33 @@
         "timestamp": "1705674951",
         "stopId": "1325",
         "vehicle": {
+          "id": "ineo-bus:2552",
+          "label": "LE BOUSCAT Hippodrome"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:39763169-2024_HIVER-M05_A01-Jeu-Ven-18",
+      "vehicle": {
+        "trip": {
+          "tripId": "39763169-2024_HIVER-M05_A01-Jeu-Ven-18",
+          "startTime": "14:15:00",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "23",
+          "directionId": 0
+        },
+        "position": {
+          "latitude": 44.818111419677734,
+          "longitude": -0.5722541213035583,
+          "bearing": 0,
+          "odometer": 14136,
+          "speed": 1.6666666269302368
+        },
+        "currentStopSequence": 34,
+        "currentStatus": "IN_TRANSIT_TO",
+        "timestamp": "1705673227",
+        "stopId": "7982",
+        "vehicle": {
           "id": "ineo-bus:2553",
           "label": "LE BOUSCAT Hippodrome"
         }
@@ -4738,7 +5116,7 @@
           "startTime": "15:21:00",
           "scheduleRelationship": "SCHEDULED",
           "routeId": "07",
-          "directionId": 1
+          "directionId": 0
         },
         "position": {
           "latitude": 44.92692947387695,
@@ -4753,7 +5131,7 @@
         "stopId": "1821",
         "vehicle": {
           "id": "ineo-bus:2554",
-          "label": "BORDEAUX Centre Commercial du Lac"
+          "label": "AMBARES Parabelle"
         }
       }
     },
@@ -6033,7 +6411,7 @@
           "tripId": "39331816-2024_HIVER-M02_A01-Jeu-Ven-08",
           "startTime": "15:40:00",
           "scheduleRelationship": "SCHEDULED",
-          "routeId": "02",
+          "routeId": "87",
           "directionId": 1
         },
         "position": {
@@ -6178,7 +6556,7 @@
           "odometer": 0,
           "speed": 0
         },
-        "currentStopSequence": 1,
+        "currentStopSequence": 42,
         "currentStatus": "STOPPED_AT",
         "timestamp": "1705674971",
         "stopId": "5689",
@@ -6372,7 +6750,7 @@
         "timestamp": "1705674971",
         "stopId": "7271",
         "vehicle": {
-          "id": "ineo-bus:2854",
+          "id": "ineo-bus:2857",
           "label": "MERIGNAC Les Pins"
         }
       }
@@ -6480,7 +6858,7 @@
         "timestamp": "1705674913",
         "stopId": "6355",
         "vehicle": {
-          "id": "ineo-bus:2862",
+          "id": "ineo-bus:2860",
           "label": "BORDEAUX Hôpital Pellegrin"
         }
       }
@@ -6583,13 +6961,40 @@
           "odometer": 861,
           "speed": 3.8888888359069824
         },
-        "currentStopSequence": 2,
+        "currentStopSequence": 3,
+        "currentStatus": "STOPPED_AT",
+        "timestamp": "1705673227",
+        "stopId": "6901",
+        "vehicle": {
+          "id": "ineo-bus:6901",
+          "label": "BORDEAUX Stalingrad"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:37551265-2024_HIVER-M69_A00-Semaine-01",
+      "vehicle": {
+        "trip": {
+          "tripId": "37551265-2024_HIVER-M69_A00-Semaine-01",
+          "startTime": "14:45:00",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "69",
+          "directionId": 0
+        },
+        "position": {
+          "latitude": 44.857261657714844,
+          "longitude": -0.55404132604599,
+          "bearing": 56,
+          "odometer": 2366,
+          "speed": 5
+        },
+        "currentStopSequence": 4,
         "currentStatus": "IN_TRANSIT_TO",
         "timestamp": "1705674951",
         "stopId": "7772",
         "vehicle": {
           "id": "ineo-bus:6902",
-          "label": "BORDEAUX Stalingrad"
+          "label": "LORMONT Bas"
         }
       }
     },
@@ -7123,7 +7528,7 @@
           "odometer": 17996,
           "speed": 0
         },
-        "currentStopSequence": 44,
+        "currentStopSequence": 4,
         "currentStatus": "IN_TRANSIT_TO",
         "timestamp": "1705674971",
         "stopId": "5294",
@@ -7150,7 +7555,7 @@
           "odometer": 6313,
           "speed": 9.44444465637207
         },
-        "currentStopSequence": 17,
+        "currentStopSequence": 51,
         "currentStatus": "IN_TRANSIT_TO",
         "timestamp": "1705674971",
         "stopId": "3049",
@@ -7222,7 +7627,7 @@
           "startTime": "15:32:00",
           "scheduleRelationship": "SCHEDULED",
           "routeId": "29",
-          "directionId": 1
+          "directionId": 0
         },
         "position": {
           "latitude": 44.9488525390625,
@@ -7237,7 +7642,7 @@
         "stopId": "1891",
         "vehicle": {
           "id": "ineo-bus:79143",
-          "label": "CARBON BLANC La Gardette"
+          "label": "SAINT LOUIS Belle Rive"
         }
       }
     },
@@ -7441,8 +7846,8 @@
           "directionId": 0
         },
         "position": {
-          "latitude": 44.87398147583008,
-          "longitude": -0.5458730459213257,
+          "latitude": 44.873897552490234,
+          "longitude": -0.5458805561065674,
           "bearing": 196,
           "odometer": 0,
           "speed": 0
@@ -7640,6 +8045,33 @@
         "currentStatus": "IN_TRANSIT_TO",
         "timestamp": "1705674971",
         "stopId": "2467",
+        "vehicle": {
+          "id": "ineo-bus:86844",
+          "label": "BORDEAUX Gambetta  Mériadeck"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:39058371-2024_HIVER-M51_A00-Semaine-04",
+      "vehicle": {
+        "trip": {
+          "tripId": "39058371-2024_HIVER-M51_A00-Semaine-04",
+          "startTime": "14:57:00",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "51",
+          "directionId": 1
+        },
+        "position": {
+          "latitude": 44.84193420410156,
+          "longitude": -0.7456921339035034,
+          "bearing": 74,
+          "odometer": 3626,
+          "speed": 14.166666984558105
+        },
+        "currentStopSequence": 5,
+        "currentStatus": "IN_TRANSIT_TO",
+        "timestamp": "1705673227",
+        "stopId": "7612",
         "vehicle": {
           "id": "ineo-bus:86844",
           "label": "BORDEAUX Gambetta  Mériadeck"
@@ -8005,7 +8437,7 @@
           "startTime": "15:21:00",
           "scheduleRelationship": "SCHEDULED",
           "routeId": "89",
-          "directionId": 1
+          "directionId": 0
         },
         "position": {
           "latitude": 44.76667022705078,
@@ -8248,7 +8680,7 @@
           "startTime": "15:35:00",
           "scheduleRelationship": "SCHEDULED",
           "routeId": "33",
-          "directionId": 0
+          "directionId": 1
         },
         "position": {
           "latitude": 44.83070373535156,
@@ -8263,7 +8695,7 @@
         "stopId": "9080",
         "vehicle": {
           "id": "ineo-bus:89020",
-          "label": "BORDEAUX Cracovie"
+          "label": "MERIGNAC Aéroport"
         }
       }
     },
@@ -8464,7 +8896,7 @@
           "startTime": "15:23:00",
           "scheduleRelationship": "SCHEDULED",
           "routeId": "85",
-          "directionId": 1
+          "directionId": 0
         },
         "position": {
           "latitude": 44.781288146972656,
@@ -8479,7 +8911,7 @@
         "stopId": "887",
         "vehicle": {
           "id": "ineo-bus:89035",
-          "label": "VILLENAVE Collège Chambéry"
+          "label": "BEGLES Salengro"
         }
       }
     },
@@ -8491,6 +8923,33 @@
           "startTime": "15:30:00",
           "scheduleRelationship": "SCHEDULED",
           "routeId": "80",
+          "directionId": 0
+        },
+        "position": {
+          "latitude": 44.76942443847656,
+          "longitude": -0.6413120627403259,
+          "bearing": 0,
+          "odometer": 14078,
+          "speed": 0
+        },
+        "currentStopSequence": 33,
+        "currentStatus": "IN_TRANSIT_TO",
+        "timestamp": "1705673227",
+        "stopId": "59",
+        "vehicle": {
+          "id": "ineo-bus:89036",
+          "label": "GRADIGNAN Stade Ornon"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:39497943-2024_HIVER-M39_A01-Jeu-Ven-10",
+      "vehicle": {
+        "trip": {
+          "tripId": "39497943-2024_HIVER-M39_A01-Jeu-Ven-10",
+          "startTime": "14:25:00",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "39",
           "directionId": 1
         },
         "position": {
@@ -8505,8 +8964,8 @@
         "timestamp": "1705674971",
         "stopId": "8931",
         "vehicle": {
-          "id": "ineo-bus:89036",
-          "label": "BORDEAUX Palais de Justice"
+          "id": "ineo-bus:89037",
+          "label": "PESSAC Photonique"
         }
       }
     },
@@ -8532,8 +8991,8 @@
         "timestamp": "1705674207",
         "stopId": "8065",
         "vehicle": {
-          "id": "ineo-bus:89037",
-          "label": "EYSINES Cantinolle"
+          "id": "ineo-bus:89039",
+          "label": "St MEDARD ZA Picot"
         }
       }
     },
@@ -8613,7 +9072,7 @@
         "timestamp": "1705674971",
         "stopId": "1616",
         "vehicle": {
-          "id": "ineo-bus:89048",
+          "id": "ineo-bus:89040",
           "label": "TALENCE Peixotto"
         }
       }
@@ -8749,7 +9208,7 @@
         "stopId": "9708",
         "vehicle": {
           "id": "ineo-bus:89085",
-          "label": "St MEDARD ZA Picot"
+          "label": "VILLENAVE Pyrénées"
         }
       }
     },
@@ -8788,7 +9247,7 @@
           "startTime": "15:50:00",
           "scheduleRelationship": "SCHEDULED",
           "routeId": "80",
-          "directionId": 0
+          "directionId": 1
         },
         "position": {
           "latitude": 44.83573913574219,
@@ -8803,7 +9262,7 @@
         "stopId": "3823",
         "vehicle": {
           "id": "ineo-bus:89087",
-          "label": "GRADIGNAN Stade Ornon"
+          "label": "BORDEAUX Palais de Justice"
         }
       }
     },
@@ -9652,7 +10111,7 @@
           "startTime": "15:25:16",
           "scheduleRelationship": "SCHEDULED",
           "routeId": "60",
-          "directionId": 0
+          "directionId": 1
         },
         "position": {
           "latitude": 44.79337692260742,
@@ -9688,7 +10147,7 @@
           "odometer": 5551,
           "speed": 0.2777777910232544
         },
-        "currentStopSequence": 13,
+        "currentStopSequence": 2,
         "currentStatus": "IN_TRANSIT_TO",
         "timestamp": "1705674967",
         "stopId": "3758",
@@ -9921,8 +10380,8 @@
           "tripId": "39829247-2024_HIVER-TR_A110-Jeu-Ven-51",
           "startTime": "15:35:05",
           "scheduleRelationship": "SCHEDULED",
-          "routeId": "59",
-          "directionId": 1
+          "routeId": "62",
+          "directionId": 0
         },
         "position": {
           "latitude": 44.83258056640625,
@@ -10044,8 +10503,8 @@
         "timestamp": "1705674967",
         "stopId": "5233",
         "vehicle": {
-          "id": "ineo-tram:1834",
-          "label": "Floirac Dravemont"
+          "id": "ineo-tram:1846",
+          "label": "Cantinolle"
         }
       }
     },
@@ -10056,7 +10515,7 @@
           "tripId": "39829246-2024_HIVER-TR_A110-Jeu-Ven-51",
           "startTime": "15:25:20",
           "scheduleRelationship": "SCHEDULED",
-          "routeId": "59",
+          "routeId": "61",
           "directionId": 1
         },
         "position": {
@@ -10071,8 +10530,8 @@
         "timestamp": "1705674972",
         "stopId": "9091",
         "vehicle": {
-          "id": "ineo-tram:1835",
-          "label": "La Gardette"
+          "id": "ineo-tram:1847",
+          "label": "Les Pyrénées"
         }
       }
     },
@@ -10179,7 +10638,7 @@
         "timestamp": "1705674972",
         "stopId": "7717",
         "vehicle": {
-          "id": "ineo-tram:1841",
+          "id": "ineo-tram:1852",
           "label": "Gare de Blanquefort"
         }
       }
@@ -10489,7 +10948,7 @@
           "startTime": "15:15:34",
           "scheduleRelationship": "SCHEDULED",
           "routeId": "61",
-          "directionId": 1
+          "directionId": 0
         },
         "position": {
           "latitude": 44.86233901977539,
@@ -10650,7 +11109,7 @@
           "tripId": "39829402-2024_HIVER-TR_A110-Jeu-Ven-51",
           "startTime": "14:56:22",
           "scheduleRelationship": "SCHEDULED",
-          "routeId": "59",
+          "routeId": "60",
           "directionId": 0
         },
         "position": {
@@ -10681,13 +11140,40 @@
           "directionId": 0
         },
         "position": {
-          "latitude": 44.83626937866211,
-          "longitude": -0.5816044807434082,
-          "bearing": 254,
-          "odometer": 9800,
-          "speed": 3.055555582046509
+          "latitude": 44.8626823425293,
+          "longitude": -0.5211202502250671,
+          "bearing": 300,
+          "odometer": 2747,
+          "speed": 6.388888835906982
         },
-        "currentStopSequence": 20,
+        "currentStopSequence": 7,
+        "currentStatus": "IN_TRANSIT_TO",
+        "timestamp": "1705673222",
+        "stopId": "3691",
+        "vehicle": {
+          "id": "ineo-tram:2210",
+          "label": "Le Haillan Rostand"
+        }
+      }
+    },
+    {
+      "id": "RTVP:T:39829569-2024_HIVER-TR_A110-Jeu-Ven-51",
+      "vehicle": {
+        "trip": {
+          "tripId": "39829569-2024_HIVER-TR_A110-Jeu-Ven-51",
+          "startTime": "15:00:33",
+          "scheduleRelationship": "SCHEDULED",
+          "routeId": "59",
+          "directionId": 0
+        },
+        "position": {
+          "latitude": 44.879852294921875,
+          "longitude": -0.5236934423446655,
+          "bearing": 180,
+          "odometer": 1325,
+          "speed": 3.8888888359069824
+        },
+        "currentStopSequence": 3,
         "currentStatus": "STOPPED_AT",
         "timestamp": "1705674967",
         "stopId": "3720",
@@ -10840,7 +11326,7 @@
           "startTime": "14:39:39",
           "scheduleRelationship": "SCHEDULED",
           "routeId": "60",
-          "directionId": 1
+          "directionId": 0
         },
         "position": {
           "latitude": 44.80400848388672,
@@ -11110,7 +11596,7 @@
           "startTime": "15:26:18",
           "scheduleRelationship": "SCHEDULED",
           "routeId": "62",
-          "directionId": 1
+          "directionId": 0
         },
         "position": {
           "latitude": 44.87689208984375,
@@ -11125,7 +11611,7 @@
         "stopId": "8349",
         "vehicle": {
           "id": "ineo-tram:2243",
-          "label": "Vernet"
+          "label": "Cantinolle"
         }
       }
     },
@@ -11740,7 +12226,7 @@
           "odometer": 5491,
           "speed": 12.777777671813965
         },
-        "currentStopSequence": 11,
+        "currentStopSequence": 29,
         "currentStatus": "IN_TRANSIT_TO",
         "timestamp": "1705674967",
         "stopId": "3704",

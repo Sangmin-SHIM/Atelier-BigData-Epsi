@@ -130,4 +130,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-*.json
+station_stop_time.json
+tbm.json

@@ -171,8 +171,8 @@ export async function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export async function execute_write_json_station_stop_time(secondes){
-  for (let i=0; i < secondes; i++) {
+export async function execute_write_json_station_stop_time(seconds){
+  for (let i=0; i < seconds; i++) {
       let tbm_data = await process_tbm_data()
       if (tbm_data !== undefined) {
           let averages = tbm_data.averages

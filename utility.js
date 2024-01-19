@@ -190,3 +190,27 @@ export async function execute_write_json_station_stop_time(secondes){
   }
 }
 
+export async function calculate_average_stop_duration(){
+  let arr_stop_duration_averages=[]
+  let raw_data = fs.readFileSync('station_stop_time.json');
+  let arr_existing = JSON.parse(raw_data);
+
+  arr_existing.reduce((_, curr) => {
+    const isExist = arr_stop_duration_averages.filter((item)=> item.stopId == curr.stopId && item.directionId == curr.directionId)
+
+    if (isExist.length > 0) {
+      if (curr.timestamp < Math.floor(Date.now() / 1000) - 3600) return
+      arr_stop_duration_averages.map((item) => {
+        if (item.stopId == curr.stopId && item.directionId == curr.directionId) {
+          item.directionId = curr.directionId
+          item.stopDurationAcc += curr.stopDuration
+          item.count += 1
+          item.stopDurationAvg = parseFloat(item.stopDurationAcc) / parseFloat(item.count)
+        }
+      })
+    } else {
+      arr_stop_duration_averages.push({routeId: curr.routeId,stopId: curr.stopId, stopDurationAcc: curr.stopDuration, count: 1, directionId: curr.directionId})
+    }
+  }, 0)
+  return  arr_stop_duration_averages
+}

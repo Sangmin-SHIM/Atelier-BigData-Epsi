@@ -1,32 +1,11 @@
-import { execute_write_json_station_stop_time } from './utility.js'
-import fs from 'node:fs';
+import { calculate_average_stop_duration, execute_write_json_station_stop_time } from './utility.js'
 
 const produceMessages = async () => {
   while (true) {
     await execute_write_json_station_stop_time(600)
     break;
   }
-  let arr_stop_duration_averages=[]
-  let rawdata = fs.readFileSync('station_stop_time.json');
-  let arr_existing = JSON.parse(rawdata);
-
-  arr_existing.reduce((_, curr) => {
-    const isExist = arr_stop_duration_averages.filter((item)=> item.stopId == curr.stopId && item.directionId == curr.directionId)
-
-    if (isExist.length > 0) {
-      if (curr.timestamp < Math.floor(Date.now() / 1000) - 3600) return
-      arr_stop_duration_averages.map((item) => {
-        if (item.stopId == curr.stopId && item.directionId == curr.directionId) {
-          item.directionId = curr.directionId
-          item.stopDurationAcc += curr.stopDuration
-          item.count += 1
-          item.stopDurationAvg = parseFloat(item.stopDurationAcc) / parseFloat(item.count)
-        }
-      })
-    } else {
-      arr_stop_duration_averages.push({routeId: curr.routeId,stopId: curr.stopId, stopDurationAcc: curr.stopDuration, count: 1, directionId: curr.directionId})
-    }
-  }, 0)
+  const average_time_in_stop_station = await calculate_average_stop_duration()
   return;
 };
 

@@ -6,7 +6,7 @@ const produceMessages = async () => {
 	setInterval(handleVehicleFailures, 60000); // Runs every 60 seconds
 	setInterval(handleTopRoutes, 30000); // Runs every 30 seconds
 	setInterval(execute_write_json_station_stop_time, 60000); // Runs every 30 seconds
-	setInterval(handleAverageStopDuration, 30000); // Runs every 30 seconds
+	setInterval(handleAverageStopDuration, 3600000); // Runs every 1 hour
 };
 
 function handleTop5Routes() {
